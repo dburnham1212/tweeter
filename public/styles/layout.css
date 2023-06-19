@@ -28,13 +28,3 @@ main{
   margin: 0 auto;
   max-width: 90%;
 }
-
-
-/*extra styles in main to be moved later */
-.tweet-container{
-  display:flex;
-  justify-content: space-between;
-  height: 1.5em;
-  align-items: center;
-  font-family: 'Bungee', sans-serif;
-}
