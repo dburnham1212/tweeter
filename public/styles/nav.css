@@ -1,0 +1,26 @@
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #4056A1;
+  min-height: 120px;
+  min-width: 100%;
+  color: #FFFFFF;
+}
+
+i{
+  color:red;
+}
+
+.nav-item {
+  margin: .5em 1.5em;
+  text-align: center;
+  flex-direction: column;
+}
+
+.logo {
+  font-family: 'Bungee', sans-serif;
+  font-size: 1.5em;
+}
+
