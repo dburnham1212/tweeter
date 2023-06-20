@@ -8,10 +8,11 @@
   width: 100%;
   height: 1.5em;
   background: transparent;
-  border: none;
+  border:none;
   border-bottom: 5px solid #545149;;
   overflow: hidden;
   resize: none;
+  outline: none;
 }
 
 /* Styles for the area below the submission fields*/
