@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <!-- NEW TWEET CSS-->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <!-- NEW TWEET CSS-->
+    <link rel="stylesheet" href="/styles/tweet-display.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -45,7 +47,7 @@
       <span class="nav-item">
         <b>Write</b> a new tweet
         <br>
-        <a href="#"><i class="fa-solid fa-angles-down"></i></a>
+        <a href="#"><i class="fa-solid fa-angles-down nav-icon"></i></a>
       </span>
     </nav>
     <!-- Header -->
@@ -72,20 +74,42 @@
       </section>
       <!-- Sample Tweets-->
       <article class = "tweet-display-container">
-        <header>
-          <img src="/images/profile-hex.png">
-          <h2>Newton</h2>
-          <h2>@SirIsaac</h2>
+        <header class = "tweet-head-display">
+          <div>
+            <img src="/images/profile-hex.png">
+            <h3>Newton</h3>
+          </div>
+          <h3 class="handle-display">@SirIsaac</h3>
         </header>
-        <div class="tweet-body">
-            <p>If I have seen further its by standing on the shoulders of giants</p>
+        <div class="tweet-body-display">
+          <p><b>If I have seen further its by standing on the shoulders of giants</b></p>
         </div>
-        <footer>
+        <footer class = "tweet-foot-display">
           <p>10 Days ago</p>
           <div>
-            <a href="#"><i class="fa-solid fa-flag"></i></a>
-            <a href="#"><i class="fa-solid fa-retweet"></i></a>
-            <a href="#"><i class="fa-solid fa-heart"></i></a>
+            <a href="#"><i class="fa-solid fa-flag tweet-icon"></i></a>
+            <a href="#"><i class="fa-solid fa-retweet tweet-icon"></i></a>
+            <a href="#"><i class="fa-solid fa-heart tweet-icon"></i></a>
+          </div>
+        </footer>
+      </article>
+      <article class = "tweet-display-container">
+        <header class = "tweet-head-display">
+          <div>
+            <img src="/images/profile-hex.png">
+            <h3>Rhoda Jacobs</h3>
+          </div>
+          <h3 class="handle-display">@MrsJacobs</h3>
+        </header>
+        <div class="tweet-body-display">
+            <p><b>Hello world!</b></p>
+        </div>
+        <footer class = "tweet-foot-display">
+          <p>12 Days ago</p>
+          <div>
+            <a href="#"><i class="fa-solid fa-flag tweet-icon"></i></a>
+            <a href="#"><i class="fa-solid fa-retweet tweet-icon"></i></a>
+            <a href="#"><i class="fa-solid fa-heart tweet-icon"></i></a>
           </div>
         </footer>
       </article>
