@@ -65,7 +65,7 @@
         <h2>Compose Tweet</h2>
         <form action="/tweets/" method="POST">
           <label for="tweet-text"><b>What are you humming about?</b></label>
-          <textarea name="text" id="tweet-text" placeholder="Write something here..." oninput="this.style.height = this.scrollHeight + 'px'" required></textarea>
+          <textarea name="text" id="tweet-text" placeholder="Write something here..." oninput="this.style.height = '',this.style.height = this.scrollHeight + 'px'" required></textarea>
           <div class="tweet-submit-area">
             <button id="submit-tweet" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -76,10 +76,10 @@
       <article class = "tweet-display-container">
         <header class = "tweet-head-display">
           <div>
-            <img src="/images/profile-hex.png">
+            <img src="https://i.imgur.com/73hZDYK.png">
             <h3>Newton</h3>
           </div>
-          <h3 class="handle-display">@SirIsaac</h3>
+          <h3>@SirIsaac</h3>
         </header>
         <div class="tweet-body-display">
           <p><b>If I have seen further its by standing on the shoulders of giants</b></p>
@@ -96,10 +96,10 @@
       <article class = "tweet-display-container">
         <header class = "tweet-head-display">
           <div>
-            <img src="/images/profile-hex.png">
+            <img src="https://i.imgur.com/nlhLi3I.png">
             <h3>Rhoda Jacobs</h3>
           </div>
-          <h3 class="handle-display">@MrsJacobs</h3>
+          <h3>@MrsJacobs</h3>
         </header>
         <div class="tweet-body-display">
             <p><b>Hello world!</b></p>

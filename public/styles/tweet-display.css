@@ -1,5 +1,5 @@
 .tweet-display-container {
-  margin: 1em 0;
+  margin: 2em 0;
   border: 5px solid #545149;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1em 1em 0;
+  width: 95%;
+  margin: 1em auto;
   height: 3em;
 }
 
@@ -22,14 +23,13 @@
   align-items: center;
 }
 
-.tweet-head-display > div >img {
-  height: 3em;
-  width: 3em;
-  margin: .2em;
+.tweet-head-display > div > img {
+  height: 5rem;
+  width: 5rem;
+  margin-right: 1rem;
 }
 
-.handle-display {
-  
+.tweet-head-display > h3 {
   color: #c9cbdf;
 }
 
@@ -52,8 +52,9 @@
 }
 
 .tweet-foot-display {
+  width: 95%;
   height: 2em;
-  margin: 0 1em;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
