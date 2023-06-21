@@ -68,16 +68,15 @@
         <h2>Compose Tweet</h2>
         <form id="tweet-submit-form">
           <label for="tweet-text"><b>What are you humming about?</b></label>
-          <textarea name="text" id="tweet-text" placeholder="Write something here..." oninput="this.style.height = '',this.style.height = this.scrollHeight + 'px'" required></textarea>
+          <textarea name="text" id="tweet-text" placeholder="Write something here..." oninput="this.style.height = '',this.style.height = this.scrollHeight + 'px'"></textarea>
           <div class="tweet-submit-area">
             <button id="submit-tweet" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <div id="tweets-container">
-
-      </div>
+      <!-- Container specifically for storing tweets from the db-->
+      <div id="tweets-container"></div>
       <!-- Sample Tweets-->
       <!-- <article class = "tweet-display-container">
         <header class = "tweet-head-display">

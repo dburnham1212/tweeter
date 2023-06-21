@@ -7,6 +7,7 @@ const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
+  $('#tweets-container').empty(); // Empty the tweet container before display
   for(let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').prepend($tweet); 
@@ -44,8 +45,9 @@ const sendPostToBackend = (text) => {
     method: "POST",
     url: "/tweets/",
     data: { text }
-  }).then(res => {
-
+  }).then(() => {
+    //reload the tweets with the new added tweet
+    loadTweets();
   });
 }
 
@@ -53,18 +55,24 @@ const loadTweets = () => {
   $.ajax({
     method: "GET",
     url: "/tweets/",
-  }).then(res => {
+  }).then((res) => {
     renderTweets(res);
   })
 }
 
 $(document).ready(function() {
+  const characterLimit = 140
   $("#tweet-submit-form").on("submit", event => {
     event.preventDefault();  
     const result = $(event.target).find("#tweet-text").val();    
-    if(result.length > 140) {
+    if(result.length > characterLimit) {
       alert("Character limit exceeded");
-    } else {
+    } else if (result.length === 0){
+      alert("No tweet body")
+    }  else {
+      // Empty and reset the fields so that you can input new values
+      $(event.target).find("#tweet-text").val('');
+      $(event.target).find("#counter").val(`${characterLimit}`);
       sendPostToBackend(result);
     }
   });
