@@ -66,8 +66,23 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
+const sendPostToBackend = (text) => {
+  $.ajax({
+    method: "POST",
+    url: "/tweets/",
+    data: { text }
+  }).then(res => {
+
+  });
+}
 
 
 $(document).ready(function() {
+  $("#tweet-submit-form").on("submit", event => {
+    event.preventDefault();  
+    const result = $(event.target).find("#tweet-text").val();
+    sendPostToBackend(result);
+  });
+
   renderTweets(data);// to add it to the page so we can make sure it's got all the right elements, classes, etc.
 });
