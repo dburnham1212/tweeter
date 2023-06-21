@@ -70,21 +70,31 @@ const loadTweets = () => {
   })
 }
 
+
+
 $(document).ready(function() {
   const characterLimit = 140
+  
+  $("#tweet-error-container").hide();
+
   $("#tweet-submit-form").on("submit", event => {
     event.preventDefault();  
-    const result = $(event.target).find("#tweet-text").val();    
-    if(result.length > characterLimit) {
-      alert("Character limit exceeded");
-    } else if (result.length === 0){
-      alert("No tweet body")
-    }  else {
-      // Empty and reset the fields so that you can input new values
-      $(event.target).find("#tweet-text").val('');
-      $(event.target).find("#counter").val(`${characterLimit}`);
-      sendPostToBackend(result);
-    }
+    const result = $(event.target).find("#tweet-text").val();
+    $("#tweet-error-container").slideUp("slow", () => {    
+      if(result.length > characterLimit) {
+        $("#tweet-error-text").text('TOO LONG, PLEASE RESPECT OUR ARBITRARY POST LENGTH OF 140 CHARACTERS');
+        $("#tweet-error-container").slideDown("slow");
+      } else if (result.length === 0){
+        $("#tweet-error-text").text('NO TWEET BODY');
+        $("#tweet-error-container").slideDown("slow");
+      }  else {
+        // Empty and reset the fields so that you can input new values
+        
+        $(event.target).find("#tweet-text").val('');
+        $(event.target).find("#counter").val(`${characterLimit}`);
+        sendPostToBackend(result);
+      }
+    });
   });
 
   loadTweets();

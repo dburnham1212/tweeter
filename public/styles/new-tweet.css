@@ -1,4 +1,5 @@
 .new-tweet {
+  margin-top: 2em;
   display:flex;
   flex-direction: column;
 }
@@ -30,4 +31,11 @@
   color: #FFFFFF;
   border: none;
   padding: .2em;
+}
+
+#tweet-error-container > h4{
+  width: 100%;
+  color: red;
+  border: 5px solid red;
+  padding: .2rem;
 }
