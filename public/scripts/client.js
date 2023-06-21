@@ -14,21 +14,29 @@ const renderTweets = function(tweets) {
   }
 }
 
+// Function used to validate strings by converting input into a string
+const escapeStr = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+// Function used to create a new tweet via a template
 const createTweetElement = function(tweet) {
   let $tweet = $(
     `<article class = "tweet-display-container">
         <header class = "tweet-head-display">
           <div>
-            <img src="${tweet.user.avatars}">
-            <h3>${tweet.user.name}</h3>
+            <img src="${escapeStr(tweet.user.avatars)}">
+            <h3>${escapeStr(tweet.user.name)}</h3>
           </div>
-          <h3>${tweet.user.handle}</h3>
+          <h3>${escapeStr(tweet.user.handle)}</h3>
         </header>
         <div class="tweet-body-display">
-            <p><b>${tweet.content.text}</b></p>
+            <p><b>${escapeStr(tweet.content.text)}</b></p>
         </div>
         <footer class = "tweet-foot-display">
-          <p>${timeago.format(tweet.created_at)}</p>
+          <p>${escapeStr(timeago.format(tweet.created_at))}</p>
           <div>
             <a href="#"><i class="fa-solid fa-flag tweet-icon"></i></a>
             <a href="#"><i class="fa-solid fa-retweet tweet-icon"></i></a>
@@ -40,6 +48,7 @@ const createTweetElement = function(tweet) {
   return $tweet;
 }
 
+// Post a tweet to the server
 const sendPostToBackend = (text) => {
   $.ajax({
     method: "POST",
@@ -51,6 +60,7 @@ const sendPostToBackend = (text) => {
   });
 }
 
+// Load all of the tweets from the server
 const loadTweets = () => {
   $.ajax({
     method: "GET",

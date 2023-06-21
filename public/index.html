@@ -67,6 +67,8 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form id="tweet-submit-form">
+          <!--Container specifically for error handling-->
+          <div id="tweet-error-container"></div>
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text" placeholder="Write something here..." oninput="this.style.height = '',this.style.height = this.scrollHeight + 'px'"></textarea>
           <div class="tweet-submit-area">
