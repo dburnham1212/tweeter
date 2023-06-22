@@ -54,8 +54,9 @@
       </span>
       
     </nav>
-    <span id="back-to-top">
-      <i class="fa-solid fa-angles-up white-nav-icon"></i>
+    <!-- Back to top button that appears in bottom right of screen upon scroll -->
+    <span id="back-to-top" class="nav-button">
+      <i class="fa-solid fa-angles-up white-nav-icon nav-button"></i>
     </span>
     
     <!-- Header -->
@@ -69,12 +70,13 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section id="new-tweet-container" class="new-tweet">
+      <section id="new-tweet-container">
         <form id="tweet-submit-form">
           <!--Container specifically for error handling-->
           <div id="tweet-error-container">
             <h4 id="tweet-error-text"></h4>
           </div>
+          <!--Tweet input form data-->
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text" placeholder="Write something here..." oninput="this.style.height = '',this.style.height = this.scrollHeight + 'px'"></textarea>
           <div class="tweet-submit-area">
@@ -83,49 +85,8 @@
           </div>
         </form>
       </section>
-      <!-- Container specifically for storing tweets from the db-->
+      <!-- Container for storing tweets from the db-->
       <div id="tweets-container"></div>
-      <!-- Sample Tweets-->
-      <!-- <article class = "tweet-display-container">
-        <header class = "tweet-head-display">
-          <div>
-            <img src="https://i.imgur.com/73hZDYK.png">
-            <h3>Newton</h3>
-          </div>
-          <h3>@SirIsaac</h3>
-        </header>
-        <div class="tweet-body-display">
-          <p><b>If I have seen further its by standing on the shoulders of giants</b></p>
-        </div>
-        <footer class = "tweet-foot-display">
-          <p>10 Days ago</p>
-          <div>
-            <a href="#"><i class="fa-solid fa-flag tweet-icon"></i></a>
-            <a href="#"><i class="fa-solid fa-retweet tweet-icon"></i></a>
-            <a href="#"><i class="fa-solid fa-heart tweet-icon"></i></a>
-          </div>
-        </footer>
-      </article>
-      <article class = "tweet-display-container">
-        <header class = "tweet-head-display">
-          <div>
-            <img src="https://i.imgur.com/nlhLi3I.png">
-            <h3>Rhoda Jacobs</h3>
-          </div>
-          <h3>@MrsJacobs</h3>
-        </header>
-        <div class="tweet-body-display">
-            <p><b>Hello world!</b></p>
-        </div>
-        <footer class = "tweet-foot-display">
-          <p>12 Days ago</p>
-          <div>
-            <a href="#"><i class="fa-solid fa-flag tweet-icon"></i></a>
-            <a href="#"><i class="fa-solid fa-retweet tweet-icon"></i></a>
-            <a href="#"><i class="fa-solid fa-heart tweet-icon"></i></a>
-          </div>
-        </footer>
-      </article> -->
     </main>
   </body>
 </html>

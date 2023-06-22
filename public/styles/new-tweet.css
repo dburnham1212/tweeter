@@ -1,9 +1,11 @@
-.new-tweet {
+/* Style the container of the tweets*/
+#new-tweet-container {
   margin-top: 2em;
   display:flex;
   flex-direction: column;
 }
-/* Styling for the tweet body */
+
+/* Style for the tweet body */
 #tweet-text{
   margin-top: .5em;
   width: 100%;
@@ -16,7 +18,7 @@
   outline: none;
 }
 
-/* Styles for the area below the submission fields*/
+/* Style for the area below the submission fields*/
 .tweet-submit-area {
   width: 100%;
   display: flex;
@@ -31,6 +33,11 @@
   color: #FFFFFF;
   border: none;
   padding: .2em;
+}
+
+/* Style the error handler */
+#tweet-error-container{
+  text-align: center;
 }
 
 #tweet-error-container > h4{
