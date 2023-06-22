@@ -76,6 +76,16 @@ $(document).ready(function() {
   const characterLimit = 140
   
   $("#tweet-error-container").hide();
+  $("#new-tweet-container").hide();
+
+  $("#new-tweet-button").on("click", event => {
+    const tweetArea = $("#new-tweet-container")
+    if(tweetArea.is(":visible")) {
+      tweetArea.slideUp("slow");
+    } else {
+      tweetArea.slideDown("slow");
+    }
+  });
 
   $("#tweet-submit-form").on("submit", event => {
     event.preventDefault();  

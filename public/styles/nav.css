@@ -9,6 +9,10 @@ nav {
   color: #FFFFFF;
 }
 
+.nav-button {
+  cursor: pointer;
+}
+
 .nav-icon{
   color:red;
 }

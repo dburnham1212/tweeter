@@ -47,10 +47,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo nav-item">tweeter</span>
-      <span class="nav-item">
+      <span id="new-tweet-button" class="nav-item nav-button">
         <b>Write</b> a new tweet
         <br>
-        <a href="#"><i class="fa-solid fa-angles-down nav-icon"></i></a>
+        <i class="fa-solid fa-angles-down nav-icon"></i>
       </span>
     </nav>
     <!-- Header -->
@@ -64,7 +64,7 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section id="new-tweet-container" class="new-tweet">
         <form id="tweet-submit-form">
           <!--Container specifically for error handling-->
           <div id="tweet-error-container">
