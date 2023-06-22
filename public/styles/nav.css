@@ -14,30 +14,24 @@ nav {
   cursor: pointer;
 }
 
-/* Styles for nav icons to manipulate their color*/
-.nav-icon{
-  color:red;
-}
-
-.white-nav-icon{
-  color: white;
-}
-
 /* Style for the items in the navbar*/
 .nav-item {
   margin: 0 2rem;
   text-align: center;
   flex-direction: column;
 }
+.nav-item i {
+  color: red;
+}
 
 /* Styling for the logo text */
 .logo {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
   font-size: 2rem;
 }
 
 /* Style for the back to top button that appears in bottom right corner*/
-#back-to-top{
+#back-to-top {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,4 +43,7 @@ nav {
   background-color: #4056A1;
   border-radius: 50%;
   margin: 1rem;
+}
+#back-to-top i {
+  color: white;
 }

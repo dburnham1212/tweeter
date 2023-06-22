@@ -34,7 +34,7 @@
 }
 
 .tweet-icon {
-  padding: 0 .1em;
+  padding: 0 0.1em;
   color: #47569d;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .tweet-body-display {
-  display:flex;
+  display: flex;
   align-items: center;
   margin: 0 auto;
   width: 95%;

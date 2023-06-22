@@ -50,9 +50,8 @@
       <span id="new-tweet-button" class="nav-item nav-button">
         <b>Write</b> a new tweet
         <br>
-        <i class="fa-solid fa-angles-down nav-icon"></i>
+        <i class="fa-solid fa-angles-down"></i>
       </span>
-      
     </nav>
     <!-- Back to top button that appears in bottom right of screen upon scroll -->
     <span id="back-to-top" class="nav-button">
@@ -60,33 +59,35 @@
     </span>
     
     <!-- Header -->
-    <header id="profile-display">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <div>
-          <h2>Your Name</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section id="new-tweet-container">
-        <form id="tweet-submit-form">
-          <!--Container specifically for error handling-->
-          <div id="tweet-error-container">
-            <h4 id="tweet-error-text"></h4>
-          </div>
-          <!--Tweet input form data-->
-          <label for="tweet-text"><b>What are you humming about?</b></label>
-          <textarea name="text" id="tweet-text" placeholder="Write something here..." oninput="this.style.height = '',this.style.height = this.scrollHeight + 'px'"></textarea>
-          <div class="tweet-submit-area">
-            <button id="submit-tweet" type="submit">Tweet</button>
-            <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-      <!-- Container for storing tweets from the db-->
-      <div id="tweets-container"></div>
-    </main>
+    <div id="content-container">
+      <header id="profile-display" class="align-center">
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <div>
+            <h2>Your Name</h2>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section id="new-tweet-container">
+          <form id="tweet-submit-form">
+            <!--Container specifically for error handling-->
+            <div id="tweet-error-container">
+              <h4 id="tweet-error-text"></h4>
+            </div>
+            <!--Tweet input form data-->
+            <label for="tweet-text"><b>What are you humming about?</b></label>
+            <textarea name="text" id="tweet-text" placeholder="Write something here..." oninput="this.style.height = '',this.style.height = this.scrollHeight + 'px'"></textarea>
+            <div id="tweet-submit-area">
+              <button id="submit-tweet" type="submit">Tweet</button>
+              <output id="counter" name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <!-- Container for storing tweets from the db-->
+        <div id="tweets-container"></div>
+      </main>
+    </div>
   </body>
 </html>

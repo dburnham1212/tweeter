@@ -1,0 +1,48 @@
+/* Style the container of the tweets*/
+#new-tweet-container {
+  margin-top: 2em;
+  display:flex;
+  flex-direction: column;
+}
+
+/* Style for the tweet body */
+#tweet-text{
+  margin-top: 1rem;
+  width: 100%;
+  height: 2rem;
+  background: transparent;
+  border:none;
+  border-bottom: 5px solid #545149;;
+  overflow: hidden;
+  resize: none;
+  outline: none;
+}
+
+/* Style for the area below the submission fields*/
+#tweet-submit-area {
+  margin: .5em 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
+}
+
+/* Style the button used to submit tweets*/
+#submit-tweet{
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border: none;
+  padding: .2em;
+}
+
+/* Style the error handler */
+#tweet-error-container{
+  text-align: center;
+}
+
+#tweet-error-container > h4{
+  width: 100%;
+  color: red;
+  border: 5px solid red;
+  padding: .2rem;
+}

@@ -111,6 +111,7 @@ $(document).ready(function() {
     $(window).scrollTop(0);
   });
 
+  /* Submit the form data for a new tweet and do error handling */
   $("#tweet-submit-form").on("submit", event => {
     event.preventDefault();  
     const result = $(event.target).find("#tweet-text").val();

@@ -1,0 +1,21 @@
+/* Style for profile header at top of page*/
+@import "align-center";
+
+#profile-display{
+  background-image: url("../images/45-degree-fabric-light.png");
+  background-color: #4094a1;
+  display: flex;
+  @include align-center;
+  flex-direction: column; 
+  justify-content: flex-end;
+  height: 520px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px){
+  #profile-display{
+    justify-content: center;
+    margin: 175px 10% 0 5%;
+    width: 35%;
+  }
+}
