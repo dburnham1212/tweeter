@@ -77,14 +77,32 @@ $(document).ready(function() {
   
   $("#tweet-error-container").hide();
   $("#new-tweet-container").hide();
+  $("#back-to-top").hide();
 
   $("#new-tweet-button").on("click", event => {
-    const tweetArea = $("#new-tweet-container")
+    const tweetArea = $("#new-tweet-container");
     if(tweetArea.is(":visible")) {
       tweetArea.slideUp("slow");
     } else {
       tweetArea.slideDown("slow");
     }
+  });
+
+  $(document).on("scroll", event => {
+    console.log($(window).scrollTop())
+    if($(window).scrollTop() < 25){
+      $("#new-tweet-button").show();
+      $("#back-to-top").hide();
+    } else {
+      $("#new-tweet-button").hide();
+      $("#back-to-top").show();
+    }
+  });
+
+  $("#back-to-top").on("click", event => {
+    const tweetArea = $("#new-tweet-container");
+    tweetArea.slideDown("slow");
+    $(window).scrollTop(0);
   });
 
   $("#tweet-submit-form").on("submit", event => {

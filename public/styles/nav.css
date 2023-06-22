@@ -17,6 +17,10 @@ nav {
   color:red;
 }
 
+.white-nav-icon{
+  color: white;
+}
+
 .nav-item {
   margin: 0 1.5em;
   text-align: center;
@@ -28,3 +32,17 @@ nav {
   font-size: 1.5em;
 }
 
+#back-to-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 5rem;
+  width: 5rem;
+  background-color: #4056A1;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 1rem;
+}
