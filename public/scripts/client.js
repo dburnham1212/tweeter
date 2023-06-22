@@ -8,7 +8,7 @@ const renderTweets = function(tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
   $('#tweets-container').empty(); // Empty the tweet container before display
-  for(let tweet of tweets) {
+  for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').prepend($tweet); 
   }
@@ -38,9 +38,9 @@ const createTweetElement = function(tweet) {
         <footer class = "tweet-foot-display">
           <p>${escapeStr(timeago.format(tweet.created_at))}</p>
           <div>
-            <a href="#"><i class="fa-solid fa-flag tweet-icon"></i></a>
-            <a href="#"><i class="fa-solid fa-retweet tweet-icon"></i></a>
-            <a href="#"><i class="fa-solid fa-heart tweet-icon"></i></a>
+            <a href="#"><i class="fa-solid fa-flag"></i></a>
+            <a href="#"><i class="fa-solid fa-retweet"></i></a>
+            <a href="#"><i class="fa-solid fa-heart"></i></a>
           </div>
         </footer>
       </article>
@@ -54,8 +54,7 @@ const sendPostToBackend = (text) => {
     method: "POST",
     url: "/tweets/",
     data: { text }
-  }).then(() => {
-    //reload the tweets with the new added tweet
+  }).then(() => {//If successful reload the tweets with the new added tweet
     loadTweets();
   });
 }
@@ -65,7 +64,7 @@ const loadTweets = () => {
   $.ajax({
     method: "GET",
     url: "/tweets/",
-  }).then((res) => {
+  }).then((res) => { // If successful render all of the tweets
     renderTweets(res);
   })
 }
@@ -73,7 +72,7 @@ const loadTweets = () => {
 
 
 $(document).ready(function() {
-  const characterLimit = 140
+  const characterLimit = 140;
   
   const backToTop = $("#back-to-top");
   const tweetArea = $("#new-tweet-container");
@@ -86,20 +85,20 @@ $(document).ready(function() {
 
   /* Add an on click handler to dispay the tweet field if clicked */
   newTweetButton.on("click", event => {
-    if(tweetArea.is(":visible")) {
-      tweetArea.slideUp("slow");
-    } else {
-      tweetArea.slideDown("slow");
+    if(tweetArea.is(":visible")) {// If the tweet field is visible hide the field
+      tweetArea.slideUp("slow"); 
+    } else { // Otherwise show the field
+      tweetArea.slideDown("slow"); 
     }
   });
 
   /* Check if a user has scrolled and display a button to scroll back to top*/
   $(document).on("scroll", event => {
     console.log($(window).scrollTop())
-    if($(window).scrollTop() < 25){// if we have scrolled past a certain threshold 
+    if($(window).scrollTop() < 25){// if we have scrolled past a certain threshold show the back to top button an hide the new tweet button
       newTweetButton.show();
       backToTop.hide();
-    } else {
+    } else { //Otherwise show the new tweet button and hide the back to top button
       newTweetButton.hide();
       backToTop.show();
     }
@@ -131,6 +130,6 @@ $(document).ready(function() {
     });
   });
 
+  // Load our tweets!
   loadTweets();
-  //renderTweets(data);// to add it to the page so we can make sure it's got all the right elements, classes, etc.
 });

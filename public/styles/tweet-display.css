@@ -1,3 +1,4 @@
+/* Styling the container for tweets*/
 .tweet-display-container {
   margin: 2em 0;
   border: 5px solid #545149;
@@ -5,10 +6,12 @@
   flex-direction: column;
 }
 
+/*Styling the container for tweets when hovered over */
 .tweet-display-container:hover {
   box-shadow: 10px 10px 5px #c9cbdf;
 }
 
+/* Style for the tweet header */
 .tweet-head-display {
   display: flex;
   justify-content: space-between;
@@ -18,28 +21,20 @@
   height: 3em;
 }
 
-.tweet-head-display > div {
+/* Style for divs within the tweet header*/
+.tweet-head-display div {
   display: flex;
   align-items: center;
 }
 
-.tweet-head-display > div > img {
+.tweet-head-display img {
   height: 5rem;
   width: 5rem;
   margin-right: 1rem;
 }
 
-.tweet-head-display > h3 {
+.tweet-head-display h3 {
   color: #c9cbdf;
-}
-
-.tweet-icon {
-  padding: 0 0.1em;
-  color: #47569d;
-}
-
-.tweet-icon:hover {
-  color: #9d9047;
 }
 
 .tweet-body-display {
@@ -58,4 +53,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.tweet-foot-display i {
+  padding: 0 0.1em;
+  color: #47569d;
+}
+.tweet-foot-display i:hover {
+  color: #9d9047;
 }

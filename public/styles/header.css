@@ -1,4 +1,4 @@
-/* Style for profile header at top of page*/
+/* Style for profile header at top of page*/ /* Mixing to align items to center */
 #profile-display {
   background-image: url("../images/45-degree-fabric-light.png");
   background-color: #4094a1;
@@ -14,6 +14,7 @@
   #profile-display {
     justify-content: center;
     margin: 175px 10% 0 5%;
+    border: 5px solid #545149;
     width: 35%;
   }
 }
