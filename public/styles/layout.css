@@ -34,6 +34,7 @@ main {
   width: 90%;
 }
 
+/* Create a media query to change CSS when below 1024px*/
 @media only screen and (min-width: 1024px) {
   #content-container {
     flex-direction: row;

@@ -23,7 +23,7 @@ const escapeStr = function(str) {
 
 // Function used to create a new tweet via a template
 const createTweetElement = function(tweet) {
-  let $tweet = $(
+  let $tweet = $( //New tweet template
     `<article class = "tweet-display-container">
         <header class = "tweet-head-display">
           <div>
@@ -72,13 +72,16 @@ const loadTweets = () => {
 
 
 $(document).ready(function() {
+  /* Define the character limit*/
   const characterLimit = 140;
   
+  /* Setup objects used for ease of use and clarity */
   const backToTop = $("#back-to-top");
   const tweetArea = $("#new-tweet-container");
   const newTweetButton = $("#new-tweet-button");
   const tweetErrorContainer = $("#tweet-error-container");
 
+  /* Set initial states to hide the things we dont want to see*/
   tweetErrorContainer.hide();
   tweetArea.hide();
   backToTop.hide();

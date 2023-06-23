@@ -6,9 +6,9 @@ $(document).ready(function() {
     const counterValue = $(this).val();
     const tweetCounter = $(this).next().children('output.counter');
     tweetCounter.text(tweetLength - counterValue.length);
-    if (tweetLength - counterValue.length < 0) {
+    if (tweetLength - counterValue.length < 0) {// if we have gone past the character limit set counter to red
       tweetCounter.css('color', 'red');
-    } else {
+    } else { //Otherwise set counter to normal color
       tweetCounter.css('color', '#545149');
     }
   });

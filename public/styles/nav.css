@@ -11,6 +11,7 @@ nav {
   color: #FFFFFF;
 }
 
+/* Force nav buttons to be defaulted to having a pointer instead of a cursor*/
 .nav-button {
   cursor: pointer;
 }

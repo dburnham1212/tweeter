@@ -1,6 +1,7 @@
 /* Style for profile header at top of page*/
 @import "align-center";
 
+/* Style for the profile image and background*/
 #profile-display{
   background-image: url("../images/45-degree-fabric-light.png");
   background-color: #4094a1;
@@ -12,6 +13,7 @@
   width: 100%;
 }
 
+/* Media query to change profile image and background when below 1024 pixels */
 @media only screen and (min-width: 1024px){
   #profile-display{
     justify-content: center;
