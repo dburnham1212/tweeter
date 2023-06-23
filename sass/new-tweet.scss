@@ -3,6 +3,7 @@
   margin-top: 2em;
   display:flex;
   flex-direction: column;
+  visibility: hidden; // make sure object is invisible on load
 }
 
 /* Style for the tweet body */
@@ -38,7 +39,7 @@
 /* Style the error handler */
 #tweet-error-container{
   text-align: center;
-  
+
   h4{
     width: 100%;
     color: red;

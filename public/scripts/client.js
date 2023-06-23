@@ -86,8 +86,10 @@ $(document).ready(function() {
   /* Add an on click handler to dispay the tweet field if clicked */
   newTweetButton.on("click", () => {
     if (tweetArea.is(":visible")) {// If the tweet field is visible hide the field
+      
       tweetArea.slideUp("slow");
     } else { // Otherwise show the field
+      tweetArea.css("visibility", "visible"); // make sure tweetAreas visibility property is set to visible
       tweetArea.slideDown("slow");
     }
   });
@@ -100,6 +102,7 @@ $(document).ready(function() {
       backToTop.hide();
     } else { //Otherwise show the new tweet button and hide the back to top button
       newTweetButton.hide();
+      backToTop.css("visibility", "visible"); // make sure backToTops visibility property is set to visible
       backToTop.show();
     }
   });

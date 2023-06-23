@@ -54,6 +54,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* Style the icons in the footer of the tweets*/
 }
 .tweet-foot-display i {
   padding: 0 0.1em;
