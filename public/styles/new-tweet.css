@@ -39,8 +39,7 @@
 #tweet-error-container {
   text-align: center;
 }
-
-#tweet-error-container > h4 {
+#tweet-error-container h4 {
   width: 100%;
   color: red;
   border: 5px solid red;

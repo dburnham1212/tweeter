@@ -38,11 +38,12 @@
 /* Style the error handler */
 #tweet-error-container{
   text-align: center;
+  
+  h4{
+    width: 100%;
+    color: red;
+    border: 5px solid red;
+    padding: .2rem;
+  }
 }
 
-#tweet-error-container > h4{
-  width: 100%;
-  color: red;
-  border: 5px solid red;
-  padding: .2rem;
-}

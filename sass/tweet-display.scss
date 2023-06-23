@@ -18,25 +18,27 @@
   align-items: center;
   width: 95%;
   margin: 1em auto;
-  height: 3em;
+  height: 3em; 
+  
+  div {
+    display: flex;
+    align-items: center;
+
+    /* Style the profile Image */
+    img {
+      height: 5rem;
+      width: 5rem;
+      margin-right: 1rem;
+    }
+  }
 }
 
-/* Style for divs within the tweet header*/
-.tweet-head-display div {
-  display: flex;
-  align-items: center;
-}
-
-.tweet-head-display img {
-  height: 5rem;
-  width: 5rem;
-  margin-right: 1rem;
-}
-
-.tweet-head-display h3 {
+/* Style the handle */ 
+.tweet-head-display > h3 {
   color: #c9cbdf;
 }
 
+/* Style the body of the tweet */
 .tweet-body-display {
   display:flex;
   align-items: center;
@@ -46,6 +48,7 @@
   height: 5em;
 }
 
+/* Style the footer */
 .tweet-foot-display {
   width: 95%;
   height: 2em;
