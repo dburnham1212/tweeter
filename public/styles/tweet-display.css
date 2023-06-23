@@ -45,6 +45,9 @@
   border-bottom: 5px solid #545149;
   height: 5em;
 }
+.tweet-body-display p {
+  word-break: break-word;
+}
 
 /* Style the footer */
 .tweet-foot-display {
