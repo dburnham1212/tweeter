@@ -44,6 +44,7 @@
   width: 95%;
   border-bottom: 5px solid #545149;
   height: 5em;
+  /* If the tweet is a long word, break it*/
 }
 .tweet-body-display p {
   word-break: break-word;
