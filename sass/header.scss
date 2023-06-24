@@ -11,6 +11,14 @@
   justify-content: flex-end;
   height: 520px;
   width: 100%;
+
+  h2{
+    color: white;
+  }
+
+  span{
+    font-weight:300;
+  }
 }
 
 /* Media query to change profile image and background when below 1024 pixels */

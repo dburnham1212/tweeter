@@ -50,3 +50,8 @@ nav {
 #back-to-top i {
   color: white;
 }
+
+/* Create a class specifically for error coloring */
+.setErrorColor {
+  color: red;
+}

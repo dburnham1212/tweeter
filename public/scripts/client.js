@@ -1,16 +1,51 @@
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+$(document).ready(function() {
+  /* Define the character limit*/
+  const characterLimit = 140;
+  
+  /* Setup objects used for ease of use and clarity */
+  const $tweetErrorContainer = $("#tweet-error-container");
+
+  /* Set initial states to hide the things we dont want to see*/
+  $tweetErrorContainer.hide();
+
+  /* Submit the form data for a new tweet and do error handling */
+  $("#tweet-submit-form").on("submit", function(event) {
+    event.preventDefault();
+    const tweetText = $(event.target).find("#tweet-text").val();
+    const $tweetErrorText = $(this).find("#tweet-error-text");
+    $tweetErrorContainer.slideUp("slow", () => {
+      if (tweetText.length > characterLimit) { // If the tweet has too many characters
+        $tweetErrorText.text('TOO LONG, PLEASE RESPECT OUR ARBITRARY POST LENGTH OF 140 CHARACTERS');
+        $tweetErrorContainer.slideDown("slow");
+      } else if (tweetText.length === 0) { // If there is no body for the tweet
+        $tweetErrorText.text('NO TWEET BODY');
+        $tweetErrorContainer.slideDown("slow");
+      }  else {
+        // Empty and reset the fields so that you can input new values
+        $(event.target).find("#tweet-text").val('');
+        $(event.target).find("#counter").val(`${characterLimit}`);
+        sendPostToBackend(tweetText);
+      }
+    });
+  });
+
+  // Load our tweets!
+  loadTweets();
+});
+
 const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-  $('#tweets-container').empty(); // Empty the tweet container before display
+  const container = $('#tweets-container');
+  container.empty(); // Empty the tweet container before display
   for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').prepend($tweet);
+    container.prepend($tweet);
   }
 };
 
@@ -61,81 +96,9 @@ const sendPostToBackend = (text) => {
 
 // Load all of the tweets from the server
 const loadTweets = () => {
-  $.ajax({
-    method: "GET",
-    url: "/tweets/",
-  }).then((res) => { // If successful render all of the tweets
+  $.get("/tweets/")
+  .then((res) => { // If successful render all of the tweets
     renderTweets(res);
   });
 };
 
-
-
-$(document).ready(function() {
-  /* Define the character limit*/
-  const characterLimit = 140;
-  
-  /* Setup objects used for ease of use and clarity */
-  const backToTop = $("#back-to-top");
-  const tweetArea = $("#new-tweet-container");
-  const newTweetButton = $("#new-tweet-button");
-  const tweetErrorContainer = $("#tweet-error-container");
-
-  /* Set initial states to hide the things we dont want to see*/
-  tweetErrorContainer.hide();
-  tweetArea.hide();
-  backToTop.hide();
-
-  /* Add an on click handler to dispay the tweet field if clicked */
-  newTweetButton.on("click", () => {
-    if (tweetArea.is(":visible")) {// If the tweet field is visible hide the field
-      
-      tweetArea.slideUp("slow");
-    } else { // Otherwise show the field
-      tweetArea.css("visibility", "visible"); // make sure tweetAreas visibility property is set to visible
-      tweetArea.slideDown("slow");
-    }
-  });
-
-  /* Check if a user has scrolled and display a button to scroll back to top*/
-  $(document).on("scroll", () => {
-    console.log($(window).scrollTop());
-    if ($(window).scrollTop() < 25) {// if we have scrolled past a certain threshold show the back to top button an hide the new tweet button
-      newTweetButton.show();
-      backToTop.hide();
-    } else { //Otherwise show the new tweet button and hide the back to top button
-      newTweetButton.hide();
-      backToTop.css("visibility", "visible"); // make sure backToTops visibility property is set to visible
-      backToTop.show();
-    }
-  });
-
-  /* Check if scroll to top button has been clicked, if so go back to top*/
-  backToTop.on("click", () => {
-    tweetArea.slideDown("slow");
-    $(window).scrollTop(0);
-  });
-
-  /* Submit the form data for a new tweet and do error handling */
-  $("#tweet-submit-form").on("submit", event => {
-    event.preventDefault();
-    const result = $(event.target).find("#tweet-text").val();
-    tweetErrorContainer.slideUp("slow", () => {
-      if (result.length > characterLimit) { // If the tweet has too many characters
-        $("#tweet-error-text").text('TOO LONG, PLEASE RESPECT OUR ARBITRARY POST LENGTH OF 140 CHARACTERS');
-        tweetErrorContainer.slideDown("slow");
-      } else if (result.length === 0) { // If there is no body for the tweet
-        $("#tweet-error-text").text('NO TWEET BODY');
-        tweetErrorContainer.slideDown("slow");
-      }  else {
-        // Empty and reset the fields so that you can input new values
-        $(event.target).find("#tweet-text").val('');
-        $(event.target).find("#counter").val(`${characterLimit}`);
-        sendPostToBackend(result);
-      }
-    });
-  });
-
-  // Load our tweets!
-  loadTweets();
-});

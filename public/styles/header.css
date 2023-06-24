@@ -10,6 +10,12 @@
   height: 520px;
   width: 100%;
 }
+#profile-display h2 {
+  color: white;
+}
+#profile-display span {
+  font-weight: 300;
+}
 
 /* Media query to change profile image and background when below 1024 pixels */
 @media only screen and (min-width: 1024px) {

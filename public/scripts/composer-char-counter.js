@@ -1,16 +1,16 @@
+/* Check if the document is ready*/
 $(document).ready(function() {
-
-  /* Function to change the counter for tweets and update color if limit is exceeded */
-  $('#tweet-text').on('input', function() {
-    const tweetLength = 140; // Character Limit
-    const counterValue = $(this).val();
-    const tweetCounter = $(this).next().children('output.counter');
-    tweetCounter.text(tweetLength - counterValue.length);
-    if (tweetLength - counterValue.length < 0) {// if we have gone past the character limit set counter to red
-      tweetCounter.css('color', 'red');
-    } else { //Otherwise set counter to normal color
-      tweetCounter.css('color', '#545149');
-    }
-  });
-
+  /* Detect input and change tweet color if necessary */
+  $('#tweet-text').on('input', updateCounter);
 });
+
+/* Function to change the counter for tweets and update color if limit is exceeded */
+const updateCounter = function(){
+  const tweetLength = 140; // Character Limit
+  const fieldValue = $(this).val();
+  const tweetCounter = $(this).next().children('output.counter');
+
+  /* Update the field */
+  tweetCounter.text(tweetLength - fieldValue.length);
+  tweetCounter.toggleClass("setErrorColor", tweetLength - fieldValue.length < 0) //toggle coloring if error exists
+};
